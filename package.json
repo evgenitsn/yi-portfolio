@@ -1,6 +1,10 @@
 {
   "name": "yi-portfolio",
   "author": "Evgeni Nikolov (https://github.com/evgenitsn)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evgenitsn/yi-portfolio.git"
+  },
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",
