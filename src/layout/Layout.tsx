@@ -1,5 +1,13 @@
 import { GlobalStyles } from '../styles/global';
 import Head from 'next/head';
+import styled from 'styled-components';
+import { colors } from '../styles/theme';
+
+const Main = styled.main`
+  background-color: ${colors.backgroundColor};
+  color: ${colors.textColor};
+  min-height: 100vh;
+`;
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +19,7 @@ const Layout = ({ children }) => {
           rel='stylesheet'
         />
       </Head>
-      <div>{children}</div>
+      <Main>{children}</Main>
       <GlobalStyles />
     </>
   );
