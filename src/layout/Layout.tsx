@@ -1,11 +1,11 @@
 import { GlobalStyles } from '../styles/global';
 import Head from 'next/head';
-import styled from 'styled-components';
-import { colors } from '../styles/theme';
+import styled, { ThemeProvider } from 'styled-components';
+import { theme } from '../styles/theme';
 
-const Main = styled.main`
-  background-color: ${colors.backgroundColor};
-  color: ${colors.textColor};
+const Main = styled.div`
+  background-color: ${theme.colors.backgroundColor};
+  color: ${theme.colors.textColor};
   min-height: 100vh;
 `;
 
@@ -19,7 +19,9 @@ const Layout = ({ children }) => {
           rel='stylesheet'
         />
       </Head>
-      <Main>{children}</Main>
+      <ThemeProvider theme={theme}>
+        <Main>{children}</Main>
+      </ThemeProvider>
       <GlobalStyles />
     </>
   );
