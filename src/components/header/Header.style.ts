@@ -4,6 +4,7 @@ import { theme } from '../../styles/theme';
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 `;
 
 export const NavList = styled.ul`
@@ -12,14 +13,14 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-  margin: 20px 10px;
+  margin: 24px 8px;
 `;
 
 export const Wrapper = styled.header`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 24px;
 `;
 

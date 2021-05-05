@@ -1,3 +1,4 @@
 import Header from './header/Header';
+import { PageTitle } from './styled';
 
-export { Header };
+export { Header, PageTitle };

@@ -4,7 +4,7 @@ import { Wrapper, Title, NavList, NavListItem, A } from './Header.style';
 const Header = () => {
   return (
     <Wrapper>
-      <Title>Logo</Title>
+      <Title>YI</Title>
       <nav>
         <NavList>
           <NavListItem>

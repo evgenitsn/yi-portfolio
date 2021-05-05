@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { IImageSectionFields } from '../../@types/generated/contentful';
 import { appendHTTPS } from '../utils/helpers';
+import { PageTitle } from '../components';
 
 interface Props {
   photoSections: IImageSectionFields[];
@@ -18,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Photography: React.FC<Props> = ({ photoSections }) => (
   <Layout>
-    <h1>Photos</h1>
+    <PageTitle>Photos</PageTitle>
     <div>
       {photoSections.map(photoSections => {
         return (
