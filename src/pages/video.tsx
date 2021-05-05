@@ -12,9 +12,9 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { videos } };
 };
 
-const Videos: React.FC<Props> = ({ videos }) => (
+const Video: React.FC<Props> = ({ videos }) => (
   <Layout>
-    <h1>Videos</h1>
+    <h1>Video</h1>
     <div>
       {videos.map(e => (
         <div key={e.name}>
@@ -28,4 +28,4 @@ const Videos: React.FC<Props> = ({ videos }) => (
   </Layout>
 );
 
-export default Videos;
+export default Video;
