@@ -1,7 +1,7 @@
 import { Layout } from '../layout';
 
 const Home: React.FC = () => {
-  return <Layout>Home</Layout>;
+  return <Layout>Contact</Layout>;
 };
 
 export default Home;

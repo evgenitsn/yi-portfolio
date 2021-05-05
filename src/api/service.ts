@@ -5,7 +5,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getEntries() {
-  const entries = await client.getEntries();
-  return entries.items;
+export async function getAllEntriesByContentType(contentType: string) {
+  const apiResponse = await client.getEntries({ content_type: contentType });
+  return apiResponse.items.map(e => e.fields);
 }
