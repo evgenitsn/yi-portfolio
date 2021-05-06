@@ -33,6 +33,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => (
                   height='400px'
                   key={url}
                   alt={fileName}
+                  priority={true}
                   src={appendHTTPS(url + '?w=400&h=400')}
                 />
               );
