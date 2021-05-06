@@ -3,5 +3,6 @@ export const theme = {
     background: '#000',
     text: '#fff',
     textGray: 'gray',
+    formBackground: 'lightgray',
   },
 };

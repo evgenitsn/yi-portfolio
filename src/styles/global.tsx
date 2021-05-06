@@ -46,4 +46,7 @@ export const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  textarea, input, button, select {
+    font-family: inherit;
+  }
 `;
