@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 75%;
 `;
 
 const VideoList = styled.ul`
@@ -28,13 +28,19 @@ const VideoList = styled.ul`
 `;
 
 const VideoWrapper = styled.li`
-  margin: 32px 8px;
-  border: 1px solid white;
   div {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    margin-bottom: 50px;
     iframe {
-      height: calc(100vh - 500px);
-      min-height: 400px;
-      position: relative;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 `;
