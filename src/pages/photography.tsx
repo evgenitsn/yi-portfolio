@@ -24,15 +24,16 @@ const Photography: React.FC<Props> = ({ photoSections }) => (
       {photoSections.map(photoSections => {
         return (
           <div key={photoSections.name}>
-            <h4>{photoSections.name}</h4>
+            <h3>{photoSections.name}</h3>
             {photoSections.photos.map(photo => {
-              const { url } = photo.fields.file;
+              const { url, fileName } = photo.fields.file;
               return (
                 <Image
                   width='400px'
                   height='400px'
                   key={url}
-                  src={appendHTTPS(url)}
+                  alt={fileName}
+                  src={appendHTTPS(url + '?w=400&h=400')}
                 />
               );
             })}

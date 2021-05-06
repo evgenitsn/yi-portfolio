@@ -3,7 +3,7 @@ import { Layout } from '../layout';
 
 const Home: React.FC = () => {
   return (
-    <Layout>
+    <Layout title='Contact'>
       <PageTitle>Contact</PageTitle>
     </Layout>
   );

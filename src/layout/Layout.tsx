@@ -1,8 +1,12 @@
 import { GlobalStyles } from '../styles/global';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
-import { Header } from '../components';
+import { Head, Header } from '../components';
 import { MAX_PAGE_WIDTH } from '../styles/constants';
+
+interface Props {
+  title?: string;
+}
 
 const Main = styled.main`
   background-color: ${theme.colors.background};
@@ -19,10 +23,10 @@ const ContentWrapper = styled.div`
   align-items: center;
 `;
 
-const Layout = ({ children }) => {
+const Layout: React.FC<Props> = ({ children, title }) => {
   return (
     <>
-      <GlobalStyles />
+      <Head title={title} />
       <ThemeProvider theme={theme}>
         <Main>
           <ContentWrapper>
@@ -31,6 +35,7 @@ const Layout = ({ children }) => {
           </ContentWrapper>
         </Main>
       </ThemeProvider>
+      <GlobalStyles />
     </>
   );
 };
