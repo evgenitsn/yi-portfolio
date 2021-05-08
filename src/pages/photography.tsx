@@ -19,12 +19,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Photography: React.FC<Props> = ({ photoSections }) => (
   <Layout>
-    <PageTitle>Photos</PageTitle>
     <div>
       {photoSections.map(photoSections => {
         return (
           <div key={photoSections.name}>
-            <h3>{photoSections.name}</h3>
+            <PageTitle>{photoSections.name}</PageTitle>
             {photoSections.photos.map(photo => {
               const { url, fileName } = photo.fields.file;
               return (

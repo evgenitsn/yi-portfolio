@@ -13,7 +13,7 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-  margin: 24px 8px;
+  margin: 24px 1.5vw;
 `;
 
 export const Wrapper = styled.header`
@@ -21,13 +21,16 @@ export const Wrapper = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
+  padding-top: 24px;
 `;
 
 export const A = styled.a`
   text-decoration: none;
   text-transform: uppercase;
-  color: ${theme.colors.textGray};
+  letter-spacing: 1.6px;
+  /* TODO: Fix colours */
+  color: ${({ active }) =>
+    active ? theme.colors.text : theme.colors.textGray};
   transition: color 0.5s ease;
 
   &:hover {
