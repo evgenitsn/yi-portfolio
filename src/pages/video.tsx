@@ -5,7 +5,6 @@ import { IVideoFields } from '../../@types/generated/contentful';
 import YouTube from 'react-youtube';
 import { extractYouTubeIdFromUrl } from '../utils/helpers';
 import styled from 'styled-components';
-import { PageTitle } from '../components';
 
 interface Props {
   videos: IVideoFields[];
@@ -21,6 +20,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 75%;
+  margin-top: 48px;
+
+  /* TODO: extract breakpoints */
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const VideoList = styled.ul`
@@ -49,7 +54,6 @@ const Video: React.FC<Props> = ({ videos }) => {
   return (
     <Layout>
       <Wrapper>
-        <PageTitle>Video</PageTitle>
         <VideoList>
           {videos.map(({ url }) => (
             <VideoWrapper key={url}>
@@ -57,7 +61,6 @@ const Video: React.FC<Props> = ({ videos }) => {
                 key={url}
                 videoId={extractYouTubeIdFromUrl(url)}
                 opts={{
-                  width: '100%',
                   playerVars: {
                     autoplay: 0,
                     color: 'white',
