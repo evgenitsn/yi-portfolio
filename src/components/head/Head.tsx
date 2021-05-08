@@ -10,7 +10,10 @@ const Head: React.FC<Props> = ({ title }) => {
     <NextHead>
       <title>{title || SITE_TITLE}</title>
       <meta charSet='utf-8' />
-      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      <meta
+        name='viewport'
+        content='initial-scale=1, width=device-width, viewport-fit=cover'
+      />
       <meta name='description' content={META_DESCRIPTION} />
       <link
         rel='preload'
