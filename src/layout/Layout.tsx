@@ -8,11 +8,24 @@ interface Props {
   title?: string;
 }
 
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Main = styled.main`
   background-color: ${theme.colors.background};
   color: ${theme.colors.text};
-  min-height: 100vh;
-  padding-bottom: 32px;
+  display: flex;
+  flex: 1;
+`;
+
+const Footer = styled.footer`
+  color: ${theme.colors.text};
+  background-color: ${theme.colors.background};
+  text-align: center;
+  padding: 48px;
 `;
 
 const ContentWrapper = styled.div`
@@ -28,12 +41,15 @@ const Layout: React.FC<Props> = ({ children, title }) => {
     <>
       <Head title={title} />
       <ThemeProvider theme={theme}>
-        <Main>
-          <ContentWrapper>
-            <Header />
-            {children}
-          </ContentWrapper>
-        </Main>
+        <Body>
+          <Main>
+            <ContentWrapper>
+              <Header />
+              {children}
+            </ContentWrapper>
+          </Main>
+          <Footer>© {new Date().getFullYear()} Yordan Ivanov</Footer>
+        </Body>
       </ThemeProvider>
       <GlobalStyles />
     </>

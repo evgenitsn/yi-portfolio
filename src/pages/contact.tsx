@@ -1,4 +1,4 @@
-import { PageTitle } from '../components';
+import { SectionTitle } from '../components';
 import { Layout } from '../layout';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
@@ -40,11 +40,20 @@ const Submit = styled.input`
 
 const Home: React.FC = () => {
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit = data => console.log(data);
+
+  const onSubmit = data => {
+    // TODO: Finish form submission
+    // https://formspree.io/f/xjvjglyp
+    console.log(data);
+    // fetch('https://formspree.io/f/xjvjglyp', {
+    //   method: 'POST',
+    //   body: JSON.stringify(data),
+    // });
+  };
 
   return (
     <Layout title='Contact'>
-      <PageTitle>Contact</PageTitle>
+      <SectionTitle>Contact</SectionTitle>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TextInput
           type='text'

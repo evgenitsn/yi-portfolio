@@ -1,10 +1,11 @@
-import { PageTitle } from '../components';
+import { SectionTitle } from '../components';
 import { Layout } from '../layout';
 
 const Home: React.FC = () => {
   return (
     <Layout>
-      <PageTitle>Home</PageTitle>
+      <SectionTitle>Recent work</SectionTitle>
+      <SectionTitle>Photography</SectionTitle>
     </Layout>
   );
 };

@@ -13,7 +13,8 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-  margin: 24px 1.5vw;
+  /* TODO: should this be vw? */
+  margin: 24px 3vw;
 `;
 
 export const Wrapper = styled.header`
@@ -37,4 +38,8 @@ export const A = styled.a`
     color: ${theme.colors.text};
     cursor: pointer;
   }
+`;
+
+export const Logo = styled.img`
+  margin-bottom: 16px;
 `;

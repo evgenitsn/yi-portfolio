@@ -19,11 +19,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 75%;
+  width: 130%;
   margin-top: 48px;
 
   /* TODO: extract breakpoints */
-  @media (max-width: 600px) {
+  @media (max-width: 660px) {
     width: 100%;
   }
 `;
@@ -39,7 +39,7 @@ const VideoWrapper = styled.li`
     height: 0;
     padding-bottom: 56.25%;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     iframe {
       width: 100%;
       height: 100%;
@@ -55,21 +55,24 @@ const Video: React.FC<Props> = ({ videos }) => {
     <Layout>
       <Wrapper>
         <VideoList>
-          {videos.map(({ url }) => (
-            <VideoWrapper key={url}>
-              <YouTube
-                key={url}
-                videoId={extractYouTubeIdFromUrl(url)}
-                opts={{
-                  playerVars: {
-                    autoplay: 0,
-                    color: 'white',
-                    rel: 0,
-                  },
-                }}
-              />
-            </VideoWrapper>
-          ))}
+          {videos.map(({ url }) => {
+            const youtubeVideoId = extractYouTubeIdFromUrl(url);
+            return youtubeVideoId ? (
+              <VideoWrapper key={url}>
+                <YouTube
+                  key={url}
+                  videoId={youtubeVideoId}
+                  opts={{
+                    playerVars: {
+                      autoplay: 0,
+                      color: 'white',
+                      rel: 0,
+                    },
+                  }}
+                />
+              </VideoWrapper>
+            ) : null;
+          })}
         </VideoList>
       </Wrapper>
     </Layout>

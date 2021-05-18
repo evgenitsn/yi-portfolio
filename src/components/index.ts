@@ -1,6 +1,6 @@
 import Header from './header/Header';
 import Head from './head/Head';
 
-import { PageTitle } from './styled';
+import { SectionTitle } from './styled';
 
-export { Header, PageTitle, Head };
+export { Header, SectionTitle, Head };

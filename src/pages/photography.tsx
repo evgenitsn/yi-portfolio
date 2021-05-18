@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { IImageSectionFields } from '../../@types/generated/contentful';
 import { appendHTTPS } from '../utils/helpers';
-import { PageTitle } from '../components';
+import { SectionTitle } from '../components';
 import styled from 'styled-components';
 
 interface Props {
@@ -25,30 +25,45 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Photography: React.FC<Props> = ({ photoSections }) => (
-  <Layout>
-    {photoSections.map(photoSections => {
-      return (
-        <Wrapper key={photoSections.name}>
-          <PageTitle>{photoSections.name}</PageTitle>
-          {photoSections.photos.map(photo => {
-            const { url, fileName } = photo.fields.file;
-            return (
-              <Image
-                key={url}
-                width='800px'
-                height='600px'
-                objectFit='cover'
-                alt={fileName}
-                priority={true}
-                src={appendHTTPS(url + '?w=800&q=90&fm=jpg')}
-              />
-            );
-          })}
-        </Wrapper>
-      );
-    })}
-  </Layout>
-);
+const Photography: React.FC<Props> = ({ photoSections }) => {
+  console.log(photoSections);
+  return (
+    <Layout>
+      <div>
+        {photoSections.map(e => (
+          <a href={`#${e.name.toLowerCase()}`} key={e.name}>
+            {e.name}
+          </a>
+        ))}
+      </div>
+      {photoSections.map(photoSection => {
+        return (
+          <Wrapper key={photoSection.name}>
+            <SectionTitle id={photoSection.name.toLowerCase()}>
+              {photoSection.name}
+            </SectionTitle>
+            {photoSection.photos
+              // removes the draft photos from section
+              .filter(e => 'fields' in e)
+              .map(photo => {
+                const { url, fileName } = photo.fields.file;
+                return (
+                  <Image
+                    key={url}
+                    width='800px'
+                    height='600px'
+                    objectFit='cover'
+                    alt={fileName}
+                    priority={true}
+                    src={appendHTTPS(url + '?w=800&q=90&fm=jpg')}
+                  />
+                );
+              })}
+          </Wrapper>
+        );
+      })}
+    </Layout>
+  );
+};
 
 export default Photography;
