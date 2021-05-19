@@ -7,5 +7,6 @@ export const SectionTitle = styled.h2`
   /* text-transform: uppercase; */
   font-weight: bold;
   text-align: center;
-  margin: 48px 0;
+  margin-top: 32px;
+  margin-bottom: 48px;
 `;

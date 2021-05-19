@@ -38,12 +38,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <meta charSet='utf-8' />
           <meta
             name='viewport'
             content='initial-scale=1, width=device-width, viewport-fit=cover'
           />
           <meta name='description' content={META_DESCRIPTION} />
+          <meta name='referrer' content='origin' />
           <link
             rel='preload'
             href='/fonts/WorkSans/WorkSans-Bold.ttf'
@@ -63,7 +63,7 @@ export default class MyDocument extends Document {
             crossOrigin=''
           />
         </Head>
-        <body lang='en-US'>
+        <body>
           <Main />
           <NextScript />
         </body>

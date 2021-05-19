@@ -29,13 +29,12 @@ export const A = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1.6px;
-  /* TODO: Fix colours */
-  color: ${({ active }) =>
-    active ? theme.colors.text : theme.colors.textGray};
-  transition: color 0.5s ease;
+  color: ${theme.colors.text};
+  opacity: ${({ active }) => (active ? 1 : 0.5)};
+  transition: opacity 0.5s ease;
 
   &:hover {
-    color: ${theme.colors.text};
+    opacity: 1;
     cursor: pointer;
   }
 `;
