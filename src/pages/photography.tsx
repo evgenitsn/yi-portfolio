@@ -26,9 +26,8 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Photography: React.FC<Props> = ({ photoSections }) => {
-  console.log(photoSections);
   return (
-    <Layout>
+    <Layout title='Photography'>
       <div>
         {photoSections.map(e => (
           <a href={`#${e.name.toLowerCase()}`} key={e.name}>

@@ -37,6 +37,7 @@ const ContentWrapper = styled.div`
 `;
 
 const Layout: React.FC<Props> = ({ children, title }) => {
+  // TODO: titles?
   return (
     <>
       <Head title={title} />

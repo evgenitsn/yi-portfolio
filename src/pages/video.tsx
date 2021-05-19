@@ -52,7 +52,7 @@ const VideoWrapper = styled.li`
 
 const Video: React.FC<Props> = ({ videos }) => {
   return (
-    <Layout>
+    <Layout title='Videos'>
       <Wrapper>
         <VideoList>
           {videos.map(({ url }) => {
