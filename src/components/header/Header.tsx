@@ -13,7 +13,12 @@ const Header = () => {
   const router = useRouter();
   return (
     <Wrapper>
-      <Logo src='/logo/logo-white.svg' alt='Logo' />
+      <Link href={'/'}>
+        <A active={true}>
+          <Logo src='/logo/logo-white.svg' alt='Logo' />
+        </A>
+      </Link>
+
       <nav>
         <NavList>
           {LINKS.map(({ path, name }) => (

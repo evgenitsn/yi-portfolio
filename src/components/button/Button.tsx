@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
-  onClick: () => void;
 }
 
 const StyledButton = styled.button`
@@ -19,8 +18,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button: React.FC<Props> = ({ children, onClick }) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+const Button: React.FC<Props> = ({ children, ...props }) => {
+  return <StyledButton {...props}>{children}</StyledButton>;
 };
 
 export default Button;

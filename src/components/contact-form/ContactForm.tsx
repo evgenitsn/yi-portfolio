@@ -8,6 +8,7 @@ import {
   INVALID_EMAIL_ERROR_MESSAGE,
   FORM_SUBMIT_ERROR_MESSAGE,
   THANKS_MESSAGE,
+  FORMSPARK_ACTION_URL,
 } from '../../utils/constants';
 import { Button } from '../';
 import {
@@ -17,7 +18,6 @@ import {
   TextInput,
   Error,
   ErrorContainer,
-  SubmitButton,
   ThanksContainer,
   ThanksMessage,
 } from './ContactForm.style';
@@ -43,8 +43,12 @@ const ContactForm: React.FC = () => {
     setFormSubmitError(false);
     setFormSubmitting(true);
     try {
-      const response = await fetch('https://formspree.io/f/xjvjglyp', {
+      const response = await fetch(FORMSPARK_ACTION_URL, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(data),
       });
       if (response.ok) {
@@ -131,9 +135,13 @@ const ContactForm: React.FC = () => {
           minLength: { value: 12, message: MIN_LENGTH_ERROR_MESSAGE(12) },
         })}
       />
-      <SubmitButton type='submit' disabled={formSubmitting}>
+      <Button
+        style={{ width: '70%', margin: '0 auto' }}
+        type='submit'
+        disabled={formSubmitting}
+      >
         {formSubmitting ? 'Sending...' : 'Send'}
-      </SubmitButton>
+      </Button>
       {formSubmitError && (
         <ErrorContainer>
           <Error>{FORM_SUBMIT_ERROR_MESSAGE}</Error>

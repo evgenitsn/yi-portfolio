@@ -1,6 +1,5 @@
 import { theme } from '../../styles/theme';
 import styled from 'styled-components';
-import { Button } from '..';
 
 export const Form = styled.form`
   width: 100%;
@@ -30,11 +29,6 @@ export const Label = styled.label<{ isValid: boolean }>`
   font-size: 0.875rem;
   color: ${({ isValid }) =>
     isValid ? theme.colors.text : theme.colors.errorText};
-`;
-
-export const SubmitButton = styled(Button)`
-  width: 70%;
-  margin: 0 auto;
 `;
 
 export const Error = styled.span`
