@@ -43,7 +43,7 @@ const VideoWrapper = styled.li`
   margin-bottom: 32px;
   /* Workaround for 1px thumbnail bleeding on the right of each video */
   img {
-    width: 99.5%;
+    width: 99.9%;
   }
 `;
 
