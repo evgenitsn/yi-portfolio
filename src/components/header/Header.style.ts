@@ -40,5 +40,6 @@ export const A = styled.a`
 `;
 
 export const Logo = styled.img`
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  width: 150px;
 `;

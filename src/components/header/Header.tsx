@@ -15,7 +15,7 @@ const Header = () => {
     <Wrapper>
       <Link href={'/'}>
         <A active={true}>
-          <Logo src='/logo/logo-white.svg' alt='Logo' />
+          <Logo src='/logo/logo-white.png' alt='Logo' />
         </A>
       </Link>
 
