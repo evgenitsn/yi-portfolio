@@ -4931,6 +4931,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-lite-yt-embed@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/react-lite-yt-embed/-/react-lite-yt-embed-1.2.6.tgz#65c54016499eb1754ee29f3f0d7eaf31964f19ec"
+  integrity sha512-CHIOV3p42E/unDgAKAdYO0zADXa/CUc2zUuwtQN5JgTkPQhWUlKWajvobQvBbYMoY9TIgqzB4o7u391mH/xG/A==
+
 react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"

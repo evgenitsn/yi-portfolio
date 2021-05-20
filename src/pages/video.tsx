@@ -2,9 +2,15 @@ import { getAllEntriesByContentType } from '../api/service';
 import { Layout } from '../layout';
 import { GetStaticProps } from 'next';
 import { IVideoFields } from '../../@types/generated/contentful';
-import YouTube from 'react-youtube';
 import { extractYouTubeIdFromUrl } from '../utils/helpers';
 import styled from 'styled-components';
+import dynamic from 'next/dynamic';
+import { ILiteYouTubeEmbedProps } from '../types/react-lite-youtube-embed';
+
+const LiteYoutubeEmbed = dynamic<ILiteYouTubeEmbedProps>(
+  () => import('react-lite-yt-embed').then(mod => mod.LiteYoutubeEmbed),
+  { ssr: false }
+);
 
 interface Props {
   videos: IVideoFields[];
@@ -16,12 +22,13 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 130%;
+  width: 150%;
   margin-top: 48px;
 
+  /* TODO: extract breakpoints */
+  @media (max-width: 1000px) {
+    width: 130%;
+  }
   /* TODO: extract breakpoints */
   @media (max-width: 660px) {
     width: 100%;
@@ -33,21 +40,7 @@ const VideoList = styled.ul`
 `;
 
 const VideoWrapper = styled.li`
-  div {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    overflow: hidden;
-    margin-bottom: 32px;
-    iframe {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
+  margin-bottom: 32px;
 `;
 
 const Video: React.FC<Props> = ({ videos }) => {
@@ -55,20 +48,18 @@ const Video: React.FC<Props> = ({ videos }) => {
     <Layout title='Videos'>
       <Wrapper>
         <VideoList>
-          {videos.map(({ url }) => {
+          {videos.map(({ url, name }, index) => {
             const youtubeVideoId = extractYouTubeIdFromUrl(url);
             return youtubeVideoId ? (
               <VideoWrapper key={url}>
-                <YouTube
-                  key={url}
-                  videoId={youtubeVideoId}
-                  opts={{
-                    playerVars: {
-                      autoplay: 0,
-                      color: 'white',
-                      rel: 0,
-                    },
-                  }}
+                <LiteYoutubeEmbed
+                  id={youtubeVideoId}
+                  mute={false}
+                  // {/* TODO: Video can be autoplayed */}
+                  defaultPlay={index === 0}
+                  imageAltText={name}
+                  // TODO: set some breakpoint for isMobile
+                  // isMobile={true}
                 />
               </VideoWrapper>
             ) : null;
