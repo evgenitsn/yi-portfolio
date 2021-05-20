@@ -41,6 +41,10 @@ const VideoList = styled.ul`
 
 const VideoWrapper = styled.li`
   margin-bottom: 32px;
+  /* Workaround for 1px thumbnail bleeding on the right of each video */
+  img {
+    width: 99.5%;
+  }
 `;
 
 const Video: React.FC<Props> = ({ videos }) => {
