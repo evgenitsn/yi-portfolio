@@ -23,17 +23,8 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Wrapper = styled.div`
-  width: 150%;
+  width: 90%;
   margin-top: 48px;
-
-  /* TODO: extract breakpoints */
-  @media (max-width: 1000px) {
-    width: 130%;
-  }
-  /* TODO: extract breakpoints */
-  @media (max-width: 660px) {
-    width: 100%;
-  }
 `;
 
 const VideoList = styled.ul`
@@ -42,18 +33,15 @@ const VideoList = styled.ul`
 
 const VideoWrapper = styled.li`
   margin-bottom: 32px;
-  /* Workaround for 1px thumbnail bleeding on the right of each video */
-  img {
-    width: 99.9%;
-  }
 `;
 
 const Video: React.FC<Props> = ({ videos }) => {
   return (
     <Layout title='Videos'>
       <Wrapper>
+        {/* TODO: Maybe title?? */}
         <VideoList>
-          {videos.map(({ url, name }, index) => {
+          {videos.map(({ url, name }) => {
             const youtubeVideoId = extractYouTubeIdFromUrl(url);
             return youtubeVideoId ? (
               <VideoWrapper key={url}>
@@ -61,7 +49,6 @@ const Video: React.FC<Props> = ({ videos }) => {
                   id={youtubeVideoId}
                   mute={false}
                   // {/* TODO: Video can be autoplayed */}
-                  defaultPlay={index === 0}
                   imageAltText={name}
                   // TODO: set some breakpoint for isMobile
                   // isMobile={true}

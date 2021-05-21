@@ -31,6 +31,7 @@ const Footer = styled.footer`
 
 const ContentWrapper = styled.div`
   max-width: ${MAX_PAGE_WIDTH};
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

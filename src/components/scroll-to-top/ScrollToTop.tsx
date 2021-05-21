@@ -4,6 +4,7 @@ import STT from 'react-scroll-to-top';
 import Arrow from '../../icons/background-arrow.svg';
 
 const ScrollToTop = () => {
+  // TODO: Safari visual issue
   return (
     <STT
       smooth={true}

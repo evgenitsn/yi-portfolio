@@ -55,4 +55,7 @@ export const GlobalStyles = createGlobalStyle`
   textarea, input, button, select {
     font-family: inherit;
   }
+
+  /* Needed for correct scaling the photo gallery */
+  .react-photo-gallery--gallery{ width: 100%; }
 `;
