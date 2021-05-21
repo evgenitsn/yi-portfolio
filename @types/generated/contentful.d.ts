@@ -27,6 +27,28 @@ export interface IImage extends Entry<IImageFields> {
   };
 }
 
+export interface IHomePhotographyFields {
+  /** Photos */
+  photos: Asset[];
+}
+
+export interface IHomePhotography extends Entry<IHomePhotographyFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'imageSection';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IImageSectionFields {
   /** Name */
   name: string;
