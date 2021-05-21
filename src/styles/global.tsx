@@ -2,28 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 
-  /* Fonts */
-  @font-face {
-    font-family: "WorkSans";
-    src: url("/fonts/WorkSans/WorkSans-Bold.ttf");
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Poppins";
-    src: url("/fonts/Poppins/Poppins-Light.ttf");
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Poppins";
-    src: url("/fonts/Poppins/Poppins-Regular.ttf");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-  }
 
   /* Reset css */
   html {
