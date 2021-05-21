@@ -82,7 +82,7 @@ const ContactForm: React.FC = () => {
       </ThanksContainer>
     );
   }
-  // TODO: Form jumps on submit
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <LabelContainer>

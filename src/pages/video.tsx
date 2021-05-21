@@ -6,6 +6,7 @@ import { extractYouTubeIdFromUrl } from '../utils/helpers';
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
 import { ILiteYouTubeEmbedProps } from '../types/react-lite-youtube-embed';
+import { ScrollToTop } from '../components';
 
 const LiteYoutubeEmbed = dynamic<ILiteYouTubeEmbedProps>(
   () => import('react-lite-yt-embed').then(mod => mod.LiteYoutubeEmbed),
@@ -70,6 +71,7 @@ const Video: React.FC<Props> = ({ videos }) => {
           })}
         </VideoList>
       </Wrapper>
+      <ScrollToTop />
     </Layout>
   );
 };

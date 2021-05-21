@@ -29,12 +29,15 @@
     ]
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "contentful": "^8.3.2",
     "next": "^10.2.0",
     "react": "^17.0.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^17.0.1",
     "react-hook-form": "^7.4.0",
     "react-lite-yt-embed": "^1.2.6",
+    "react-scroll-to-top": "^1.0.5",
     "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3"
   },

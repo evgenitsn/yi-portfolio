@@ -4,8 +4,9 @@ import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { IImageSectionFields } from '../../@types/generated/contentful';
 import { appendHTTPS } from '../utils/helpers';
-import { SectionTitle } from '../components';
+import { Button, SectionTitle, ScrollToTop } from '../components';
 import styled from 'styled-components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 interface Props {
   photoSections: IImageSectionFields[];
@@ -16,6 +17,11 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+const Anchor = styled(AnchorLink)`
+  text-decoration: none;
+  color: currentColor;
 `;
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -30,9 +36,17 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
     <Layout title='Photography'>
       <div>
         {photoSections.map(e => (
-          <a href={`#${e.name.toLowerCase()}`} key={e.name}>
-            {e.name}
-          </a>
+          <Button
+            style={{
+              padding: '8px 16px',
+              margin: '16px 24px ',
+            }}
+            key={e.name}
+          >
+            <Anchor offset='60' href={`#${e.name.toLowerCase()}`}>
+              {e.name}
+            </Anchor>
+          </Button>
         ))}
       </div>
       {photoSections.map(photoSection => {
@@ -61,6 +75,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
           </Wrapper>
         );
       })}
+      <ScrollToTop />
     </Layout>
   );
 };

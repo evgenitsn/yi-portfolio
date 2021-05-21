@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: string;
-}
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const StyledButton = styled.button`
   border: none;
