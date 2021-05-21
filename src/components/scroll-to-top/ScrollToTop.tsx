@@ -1,4 +1,5 @@
 import STT from 'react-scroll-to-top';
+// TODO: Fix that
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Arrow from '../../icons/background-arrow.svg';

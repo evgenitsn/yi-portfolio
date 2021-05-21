@@ -10,6 +10,11 @@ export const Title = styled.h1`
 export const NavList = styled.ul`
   display: flex;
   flex-direction: row;
+
+  /* TODO: This is temporary remove after hamburger menu */
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const NavListItem = styled.li`
