@@ -1,4 +1,6 @@
 import STT from 'react-scroll-to-top';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import Arrow from '../../icons/background-arrow.svg';
 
 const ScrollToTop = () => {
