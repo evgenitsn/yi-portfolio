@@ -135,13 +135,15 @@ const ContactForm: React.FC = () => {
           minLength: { value: 12, message: MIN_LENGTH_ERROR_MESSAGE(12) },
         })}
       />
-      <Button
-        style={{ width: '70%', margin: '0 auto' }}
-        type='submit'
-        disabled={formSubmitting}
-      >
-        {formSubmitting ? 'Sending...' : 'Send'}
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          style={{ width: '70%' }}
+          type='submit'
+          disabled={formSubmitting}
+        >
+          {formSubmitting ? 'Sending...' : 'Send'}
+        </Button>
+      </div>
       {formSubmitError && (
         <ErrorContainer>
           <Error>{FORM_SUBMIT_ERROR_MESSAGE}</Error>
