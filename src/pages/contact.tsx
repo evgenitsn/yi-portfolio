@@ -1,7 +1,7 @@
 import { ContactForm, SectionTitle } from '../components';
 import { Layout } from '../layout';
 
-const Home: React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <Layout title='Contact'>
       <SectionTitle>Contact me.</SectionTitle>
@@ -10,4 +10,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Contact;
