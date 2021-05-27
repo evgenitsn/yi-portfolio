@@ -2,6 +2,7 @@ import NextImage from 'next/image';
 import { appendHTTPS } from '../../utils/helpers';
 import { ImageContainer, Overlay } from './Image.style';
 import Eye from '../../icons/eye.svg';
+import { PhotoClickHandler } from 'react-photo-gallery';
 
 // TODO: Check the network traffic difference
 const DEFAULT_QUALITY = 85;
@@ -13,6 +14,8 @@ interface Props {
   height: number;
   top: number;
   left: number;
+  index: number;
+  onPhotoClick: PhotoClickHandler;
 }
 
 const contentfulAssetsLoader = ({
@@ -28,9 +31,25 @@ const contentfulAssetsLoader = ({
   return appendHTTPS(`${src}?w=${width}&q=${quality}&fm=jpg`);
 };
 
-const Image: React.FC<Props> = ({ src, alt, width, height, top, left }) => {
+const Image: React.FC<Props> = ({
+  src,
+  alt,
+  width,
+  height,
+  top,
+  left,
+  index,
+  onPhotoClick,
+}) => {
   return (
-    <ImageContainer top={top} left={left}>
+    <ImageContainer
+      // TODO: Fix this
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      onClick={event => onPhotoClick(event, { index })}
+      top={top}
+      left={left}
+    >
       <NextImage
         loader={contentfulAssetsLoader}
         src={src}

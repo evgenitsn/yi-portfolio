@@ -18,6 +18,7 @@ export const getVideos = async () => {
 };
 
 export const getPhotosSections = async () => {
+  let index = 0;
   const photoSectionsResponse = await getAllEntriesByContentType(
     'imageSection'
   );
@@ -33,6 +34,7 @@ export const getPhotosSections = async () => {
           fileName,
         } = photo.fields.file;
         return {
+          index: index++,
           width: image.width,
           height: image.height,
           alt: fileName,

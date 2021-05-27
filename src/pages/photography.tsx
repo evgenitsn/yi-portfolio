@@ -1,12 +1,14 @@
 import { getPhotosSections } from '../api/service';
 import { Layout } from '../layout';
 import { GetStaticProps } from 'next';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import { Button, SectionTitle, ScrollToTop, Gallery } from '../components';
 import { PhotoProps } from 'react-photo-gallery';
 import {
   Wrapper,
   Anchor,
 } from '../styles/root-level-pages-styles/photography.style';
+import { useCallback, useState } from 'react';
 
 interface Props {
   photoSections: { name: string; photos: PhotoProps[] }[];
@@ -17,6 +19,22 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Photography: React.FC<Props> = ({ photoSections }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  // TODO: Check this
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+
+  const allPhotos = photoSections.map(s => s.photos.map(p => p)).flat();
   return (
     <Layout title='Photography'>
       <div>
@@ -34,10 +52,29 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
       {photoSections.map(({ name, photos }) => (
         <Wrapper key={name}>
           <SectionTitle id={name.toLowerCase()}>{name}</SectionTitle>
-          <Gallery photos={photos} />
+          <Gallery photos={photos} onPhotoClick={openLightbox} />
         </Wrapper>
       ))}
       <ScrollToTop />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              // TODO: play with props
+              // TODO: apply styling
+              // TODO: Fullscreen disable
+              currentIndex={currentImage}
+              views={allPhotos.map(x => {
+                return {
+                  ...x,
+                  // TODO: make this ok few resolutions
+                  source: x.src + '?w=1500&q=90&fm=jpg',
+                };
+              })}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </Layout>
   );
 };
