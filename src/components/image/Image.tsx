@@ -1,6 +1,7 @@
 import NextImage from 'next/image';
 import { appendHTTPS } from '../../utils/helpers';
-import { Container } from './Image.style';
+import { ImageContainer, Overlay } from './Image.style';
+import Eye from '../../icons/eye.svg';
 
 // TODO: Check the network traffic difference
 const DEFAULT_QUALITY = 85;
@@ -29,7 +30,7 @@ const contentfulAssetsLoader = ({
 
 const Image: React.FC<Props> = ({ src, alt, width, height, top, left }) => {
   return (
-    <Container top={top} left={left}>
+    <ImageContainer top={top} left={left}>
       <NextImage
         loader={contentfulAssetsLoader}
         src={src}
@@ -38,7 +39,10 @@ const Image: React.FC<Props> = ({ src, alt, width, height, top, left }) => {
         height={height}
         quality={DEFAULT_QUALITY}
       />
-    </Container>
+      <Overlay>
+        <Eye />
+      </Overlay>
+    </ImageContainer>
   );
 };
 

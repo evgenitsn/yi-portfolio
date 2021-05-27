@@ -9,7 +9,8 @@ interface Props {
 const Gallery: React.FC<Props> = ({ photos }) => {
   return (
     <ReactGallery
-      margin={4}
+      // TODO: Customize?
+      margin={6}
       direction={'column'}
       columns={columnsCount}
       photos={photos}
