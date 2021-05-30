@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Overlay = styled.div`
   transition: opacity 0.75s ease;
-  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,25 +11,27 @@ export const Overlay = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  position: absolute;
-  top: ${({ top }) => top + 'px'};
-  left: ${({ left }) => left + 'px'};
-  opacity: 1;
-  display: block;
-  height: auto;
+  margin: 16px;
+  position: relative;
+  text-align: center;
   backface-visibility: hidden;
-
-  div {
-    transition: opacity 0.75s ease;
+  &:hover {
+    cursor: ${({ withOverlay }) => (withOverlay ? 'pointer' : 'auto')};
   }
 
-  &:hover div {
-    opacity: 0.4;
+  img {
+    opacity: ${({ withOverlay }) => (withOverlay ? 0.6 : 1)};
     transition: opacity 0.75s ease;
-    cursor: pointer;
   }
-
-  &:hover ${Overlay} {
+  &:hover img {
     opacity: 1;
+    transition: opacity 0.75s ease;
   }
+`;
+
+export const PhotosWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 `;

@@ -4,6 +4,10 @@ export const META_DESCRIPTION = 'Yordan Ivanov Portfolio';
 
 export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_PUBLIC_FORMSPARK_ACTION_URL}`;
 
+// TODO: Check the network traffic difference
+export const DEFAULT_PHOTO_QUALITY = 85;
+export const SECTION_NAMES = ['Drone', 'People', 'Events', 'Other'];
+
 // eslint-disable-next-line no-useless-escape
 export const EMAIL_VALIDATION_PATTERN = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 export const REQUIRED_ERROR_MESSAGE = 'Required field';

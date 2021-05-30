@@ -6,6 +6,7 @@ import { ContactForm } from './contact-form';
 import { ScrollToTop } from './scroll-to-top';
 import { Image } from './image';
 import { Gallery } from './gallery';
+import { HomeSection } from './home-section';
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   ScrollToTop,
   Image,
   Gallery,
+  HomeSection,
 };

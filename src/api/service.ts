@@ -44,3 +44,15 @@ export const getPhotosSections = async () => {
       }),
   }));
 };
+
+export const getHomeSectionPhotos = async () => {
+  const homeSectionsResponse = await getAllEntriesByContentType(
+    'homePhotography'
+  );
+  return homeSectionsResponse;
+};
+
+export const getHomeRecentWorkPhotos = async () => {
+  const homeSectionsResponse = await getAllEntriesByContentType('recentWork');
+  return homeSectionsResponse;
+};

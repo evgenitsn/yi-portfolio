@@ -3,9 +3,7 @@ import { appendHTTPS } from '../../utils/helpers';
 import { ImageContainer, Overlay } from './Image.style';
 import Eye from '../../icons/eye.svg';
 import { PhotoClickHandler } from 'react-photo-gallery';
-
-// TODO: Check the network traffic difference
-const DEFAULT_QUALITY = 85;
+import { DEFAULT_PHOTO_QUALITY } from '../../utils/constants';
 
 interface Props {
   src: string;
@@ -56,7 +54,7 @@ const Image: React.FC<Props> = ({
         alt={alt}
         width={width}
         height={height}
-        quality={DEFAULT_QUALITY}
+        quality={DEFAULT_PHOTO_QUALITY}
       />
       <Overlay>
         <Eye />
