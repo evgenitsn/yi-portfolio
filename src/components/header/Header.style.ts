@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
+import { MOBILE_BREAKPOINT } from '../../utils/constants';
 
 export const Title = styled.h1`
   font-size: 2rem;
@@ -12,7 +13,9 @@ export const NavList = styled.ul`
   flex-direction: row;
 
   /* TODO: This is temporary remove after hamburger menu */
-  @media (max-width: 600px) {
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    /* TODO: update this */
+    display: none;
     flex-direction: column;
   }
 `;

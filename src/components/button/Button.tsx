@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   border-radius: 12px;
   padding: 10px;
   cursor: pointer;
+  background-color: ${theme.colors.white};
 
   &:disabled {
     color: ${theme.colors.text};

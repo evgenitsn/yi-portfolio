@@ -37,6 +37,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
   const allPhotos = photoSections.map(s => s.photos.map(p => p)).flat();
   return (
     <Layout title='Photography'>
+      {/* TODO: test this on mobile with more sections */}
       <div>
         {photoSections.map(e => (
           <Button

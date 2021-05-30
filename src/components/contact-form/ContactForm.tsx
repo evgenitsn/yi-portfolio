@@ -70,6 +70,7 @@ const ContactForm: React.FC = () => {
   if (formSubmitted && isSubmitted) {
     return (
       <ThanksContainer>
+        {/* TODO: Revamp this screen */}
         <ThanksMessage>{THANKS_MESSAGE}</ThanksMessage>
         <Button
           onClick={() => {
@@ -137,7 +138,7 @@ const ContactForm: React.FC = () => {
       />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
-          style={{ width: '70%' }}
+          style={{ width: '100%' }}
           type='submit'
           disabled={formSubmitting}
         >

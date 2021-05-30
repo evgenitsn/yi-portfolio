@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MOBILE_BREAKPOINT } from '../../utils/constants';
 
 export const SectionTitle = styled.h2`
   font-family: 'WorkSans', sans-serif;
@@ -7,4 +8,10 @@ export const SectionTitle = styled.h2`
   text-align: center;
   margin-top: 48px;
   margin-bottom: 48px;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    font-size: ${({ fontSize }) => fontSize || '3.2rem'};
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 `;

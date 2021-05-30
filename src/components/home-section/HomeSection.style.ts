@@ -11,6 +11,8 @@ export const Overlay = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  flex: 1;
+  flex-basis: 190px;
   margin: 16px;
   position: relative;
   text-align: center;

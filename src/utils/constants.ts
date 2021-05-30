@@ -8,6 +8,8 @@ export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_
 export const DEFAULT_PHOTO_QUALITY = 85;
 export const SECTION_NAMES = ['Drone', 'People', 'Events', 'Other'];
 
+export const MOBILE_BREAKPOINT = '600px';
+
 // eslint-disable-next-line no-useless-escape
 export const EMAIL_VALIDATION_PATTERN = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 export const REQUIRED_ERROR_MESSAGE = 'Required field';
