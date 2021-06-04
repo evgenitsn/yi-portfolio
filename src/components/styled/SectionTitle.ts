@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { theme } from '../../styles/theme';
 import { MOBILE_BREAKPOINT } from '../../utils/constants';
 
 export const SectionTitle = styled.h2`
+  color: ${theme.colors.text};
   font-family: 'WorkSans', sans-serif;
   font-size: ${({ fontSize }) => fontSize || '5rem'};
   font-weight: bold;

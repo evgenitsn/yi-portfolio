@@ -8,19 +8,24 @@ import {
   Wrapper,
   Anchor,
 } from '../styles/root-level-pages-styles/photography.style';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import { useScrollFromLinkToAnchor } from '../hooks/use-scroll-from-link-to-anchor';
 
 interface Props {
   photoSections: { name: string; photos: PhotoProps[] }[];
 }
+
+const PAGE_Y_OFFSET = 60;
 
 export const getStaticProps: GetStaticProps = async () => {
   return { props: { photoSections: await getPhotosSections() } };
 };
 
 const Photography: React.FC<Props> = ({ photoSections }) => {
+  const wrapperRef = useRef<HTMLDivElement | null>();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  useScrollFromLinkToAnchor(wrapperRef, PAGE_Y_OFFSET);
 
   // TODO: Check this
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -40,18 +45,19 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
       {/* TODO: test this on mobile with more sections */}
       <div>
         {photoSections.map(e => (
-          <Button
-            style={{ padding: '8px 16px', margin: '16px 24px ' }}
+          <Anchor
             key={e.name}
+            offset={PAGE_Y_OFFSET}
+            href={`#${e.name.toLowerCase()}`}
           >
-            <Anchor offset='60' href={`#${e.name.toLowerCase()}`}>
+            <Button style={{ padding: '8px 16px', margin: '16px 24px ' }}>
               {e.name}
-            </Anchor>
-          </Button>
+            </Button>
+          </Anchor>
         ))}
       </div>
       {photoSections.map(({ name, photos }) => (
-        <Wrapper key={name}>
+        <Wrapper ref={wrapperRef} key={name}>
           <SectionTitle id={name.toLowerCase()}>{name}</SectionTitle>
           <Gallery photos={photos} onPhotoClick={openLightbox} />
         </Wrapper>

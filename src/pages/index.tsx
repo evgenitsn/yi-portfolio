@@ -25,7 +25,7 @@ const Home: React.FC<Props> = ({ homePhotography, homeRecent }) => {
       <HomeSection
         photosSection={homePhotography}
         sectionName={'Photography'}
-        withOverlay={true}
+        links={true}
       />
     </Layout>
   );
