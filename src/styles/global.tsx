@@ -4,7 +4,7 @@ import { theme } from './theme';
 export const GlobalStyles = createGlobalStyle`
   /* Reset css */
   html {
-    color: ${theme.colors.background};
+    background-color: ${theme.colors.background};
     padding: env(safe-area-inset);
   }
   html, body, div, span, applet, object, iframe,
