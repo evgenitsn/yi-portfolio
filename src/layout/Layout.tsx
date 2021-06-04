@@ -1,5 +1,3 @@
-import { GlobalStyles } from '../styles/global';
-import FontFamilies from '../styles/font-families';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { Head, Header } from '../components';
@@ -54,8 +52,6 @@ const Layout: React.FC<Props> = ({ children, title }) => {
           <Footer>© {new Date().getFullYear()} Yordan Ivanov</Footer>
         </Body>
       </ThemeProvider>
-      <GlobalStyles />
-      <FontFamilies />
     </>
   );
 };

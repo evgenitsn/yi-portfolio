@@ -2,6 +2,8 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
 import Head from 'next/head';
 import { META_DESCRIPTION } from '../utils/constants';
+import { GlobalStyles } from '../styles/global';
+import FontFamilies from '../styles/font-families';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,6 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name='description' content={META_DESCRIPTION} />
         <meta name='referrer' content='origin' />
       </Head>
+      <GlobalStyles />
+      <FontFamilies />
       <Component {...pageProps} />
     </>
   );
