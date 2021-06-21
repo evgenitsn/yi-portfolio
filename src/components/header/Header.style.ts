@@ -12,9 +12,7 @@ export const NavList = styled.ul`
   display: flex;
   flex-direction: row;
 
-  /* TODO: This is temporary remove after hamburger menu */
   @media (max-width: ${MOBILE_BREAKPOINT}) {
-    /* TODO: update this */
     display: none;
     flex-direction: column;
   }
@@ -45,9 +43,4 @@ export const A = styled.a`
     opacity: 1;
     cursor: pointer;
   }
-`;
-
-export const Logo = styled.img`
-  margin-bottom: 24px;
-  width: 150px;
 `;

@@ -1,13 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Wrapper, NavList, NavListItem, A, Logo } from './Header.style';
-
-const LINKS = [
-  { path: '/', name: 'Home' },
-  { path: '/photography', name: 'Photography' },
-  { path: '/video', name: 'Video' },
-  { path: '/contact', name: 'Contact' },
-];
+import { Wrapper, NavList, NavListItem, A } from './Header.style';
+import { Logo } from '../';
+import { LINKS } from '../../utils/constants';
 
 const Header = () => {
   const router = useRouter();
@@ -15,7 +10,7 @@ const Header = () => {
     <Wrapper>
       <Link href={'/'}>
         <A active={true}>
-          <Logo src='/logo/logo-white.svg' alt='Logo' />
+          <Logo />
         </A>
       </Link>
 

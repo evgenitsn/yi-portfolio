@@ -2,6 +2,11 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { Head, Header } from '../components';
 import { MAX_PAGE_WIDTH } from '../styles/constants';
+import { MobileMenu } from '../components/';
+import { useState } from 'react';
+import MenuCross from '../icons/menu-cross.svg';
+import MenuLines from '../icons/menu-lines.svg';
+import { MOBILE_BREAKPOINT } from '../utils/constants';
 
 interface Props {
   title?: string;
@@ -36,7 +41,27 @@ const ContentWrapper = styled.div`
   align-items: center;
 `;
 
+const MobileMenuButton = styled.button`
+  position: absolute;
+  right: 48px;
+  top: 48px;
+  z-index: 10;
+  background: none;
+  border: none;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 const Layout: React.FC<Props> = ({ children, title }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // TODO: Head titles?
   return (
     <>
@@ -45,7 +70,15 @@ const Layout: React.FC<Props> = ({ children, title }) => {
         <Body>
           <Main>
             <ContentWrapper>
+              <MobileMenuButton
+                onClick={() =>
+                  setIsMobileMenuOpen(isMobileMenuOpen => !isMobileMenuOpen)
+                }
+              >
+                {isMobileMenuOpen ? <MenuCross /> : <MenuLines />}
+              </MobileMenuButton>
               <Header />
+              {isMobileMenuOpen ? <MobileMenu /> : null}
               {children}
             </ContentWrapper>
           </Main>

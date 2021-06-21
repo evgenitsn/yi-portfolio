@@ -8,6 +8,17 @@ export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_
 export const DEFAULT_PHOTO_QUALITY = 85;
 export const SECTION_NAMES = ['Drone', 'People', 'Events', 'Other'];
 
+export const LINKS = [
+  { path: '/', name: 'Home' },
+  { path: '/photography', name: 'Photography' },
+  { path: '/video', name: 'Video' },
+  { path: '/contact', name: 'Contact' },
+];
+
+export const INSTAGRAM_URL = 'https://www.instagram.com/ivanovv12/';
+export const YOUTUBE_URL =
+  'https://www.youtube.com/channel/UCLE2LUgCupaF-ndNNw9gP0g';
+
 export const MOBILE_BREAKPOINT = '600px';
 
 // eslint-disable-next-line no-useless-escape

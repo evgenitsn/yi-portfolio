@@ -7,6 +7,8 @@ import { ScrollToTop } from './scroll-to-top';
 import { Image } from './image';
 import { Gallery } from './gallery';
 import { HomeSection } from './home-section';
+import { MobileMenu } from './mobile-menu';
+import { Logo } from './logo';
 
 export {
   Header,
@@ -18,4 +20,6 @@ export {
   Image,
   Gallery,
   HomeSection,
+  MobileMenu,
+  Logo,
 };
