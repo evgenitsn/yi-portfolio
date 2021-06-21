@@ -43,14 +43,22 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
   return (
     <Layout title='Photography'>
       {/* TODO: test this on mobile with more sections */}
-      <div>
+      <div
+        style={{
+          overflow: 'scroll',
+          width: '100%',
+          whiteSpace: 'nowrap',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         {photoSections.map(e => (
           <Anchor
             key={e.name}
             offset={PAGE_Y_OFFSET}
             href={`#${e.name.toLowerCase()}`}
           >
-            <Button style={{ padding: '8px 16px', margin: '16px 24px ' }}>
+            <Button style={{ padding: '8px 16px', margin: '16px' }}>
               {e.name}
             </Button>
           </Anchor>
