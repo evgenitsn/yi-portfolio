@@ -1,5 +1,4 @@
-// import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { META_DESCRIPTION } from '../utils/constants';
 import { GlobalStyles } from '../styles/global';

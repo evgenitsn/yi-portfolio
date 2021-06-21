@@ -19,7 +19,7 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/ivanovv12/';
 export const YOUTUBE_URL =
   'https://www.youtube.com/channel/UCLE2LUgCupaF-ndNNw9gP0g';
 
-export const MOBILE_BREAKPOINT = '600px';
+export const MOBILE_BREAKPOINT = '700px';
 
 // eslint-disable-next-line no-useless-escape
 export const EMAIL_VALIDATION_PATTERN = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
