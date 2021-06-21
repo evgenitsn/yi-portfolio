@@ -38,7 +38,7 @@ export const ContentWrapper = styled.div`
 
 export const MobileMenuButton = styled.button`
   position: absolute;
-  right: 48px;
+  right: 5%;
   top: 48px;
   z-index: 10;
   background: none;

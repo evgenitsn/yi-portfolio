@@ -10,8 +10,10 @@ const ScrollToTop = () => {
       style={{
         background: 'none',
         boxShadow: 'none',
-        bottom: '10%',
-        right: '8%',
+        bottom: '9%',
+        right: '6%',
+        width: '60px',
+        height: '50px',
       }}
     />
   );
