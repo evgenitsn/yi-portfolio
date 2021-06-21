@@ -4,8 +4,6 @@ import { Head, Header } from '../components';
 import { MAX_PAGE_WIDTH } from '../styles/constants';
 import { MobileMenu } from '../components/';
 import { useState } from 'react';
-import MenuCross from '../icons/menu-cross.svg';
-import MenuLines from '../icons/menu-lines.svg';
 import { MOBILE_BREAKPOINT } from '../utils/constants';
 
 interface Props {
@@ -75,7 +73,11 @@ const Layout: React.FC<Props> = ({ children, title }) => {
                   setIsMobileMenuOpen(isMobileMenuOpen => !isMobileMenuOpen)
                 }
               >
-                {isMobileMenuOpen ? <MenuCross /> : <MenuLines />}
+                {isMobileMenuOpen ? (
+                  <img src={'./icons/menu-cross.svg'} alt='Arrow' />
+                ) : (
+                  <img src={'./icons/menu-lines.svg'} alt='Arrow' />
+                )}
               </MobileMenuButton>
               <Header />
               {isMobileMenuOpen ? <MobileMenu /> : null}

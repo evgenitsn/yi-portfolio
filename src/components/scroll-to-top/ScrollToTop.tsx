@@ -1,12 +1,11 @@
 import STT from 'react-scroll-to-top';
-import Arrow from '../../icons/background-arrow.svg';
 
 const ScrollToTop = () => {
   // TODO: Safari visual issue
   return (
     <STT
       smooth={true}
-      component={<Arrow />}
+      component={<img src={'./icons/background-arrow.svg'} alt='Arrow' />}
       viewBox='0 0 50 50'
       style={{
         transform: 'rotate(-90deg)',

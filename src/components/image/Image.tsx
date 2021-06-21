@@ -1,7 +1,6 @@
 import NextImage from 'next/image';
 import { appendHTTPS } from '../../utils/helpers';
 import { ImageContainer, Overlay } from './Image.style';
-import Eye from '../../icons/eye.svg';
 import { PhotoClickHandler } from 'react-photo-gallery';
 import { DEFAULT_PHOTO_QUALITY } from '../../utils/constants';
 
@@ -57,7 +56,7 @@ const Image: React.FC<Props> = ({
         quality={DEFAULT_PHOTO_QUALITY}
       />
       <Overlay>
-        <Eye />
+        <img src={'./icons/eye.svg'} alt='Eye' />
       </Overlay>
     </ImageContainer>
   );

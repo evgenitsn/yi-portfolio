@@ -30,12 +30,11 @@
   },
   "dependencies": {
     "@rehooks/component-size": "^1.0.3",
-    "@svgr/webpack": "^5.5.0",
     "contentful": "^8.3.2",
-    "next": "^10.2.0",
-    "react": "^17.0.1",
+    "next": "^11.0.0",
+    "react": "^17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-hook-form": "^7.4.0",
     "react-images": "^1.2.0-beta.7",
     "react-lite-yt-embed": "^1.2.6",
@@ -62,6 +61,6 @@
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
-    "typescript": "^4.1.3"
+    "typescript": "^4.3.4"
   }
 }
