@@ -8,11 +8,10 @@ const ScrollToTop = () => {
       component={<img src={'./icons/background-arrow.svg'} alt='Arrow' />}
       viewBox='0 0 50 50'
       style={{
-        transform: 'rotate(-90deg)',
         background: 'none',
-        color: 'white',
         boxShadow: 'none',
-        right: '10%',
+        bottom: '10%',
+        right: '8%',
       }}
     />
   );
