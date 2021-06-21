@@ -3,11 +3,42 @@ import { IHomePhotographyFields } from '../../@types/generated/contentful';
 import { getHomeRecentWorkPhotos, getHomeSectionPhotos } from '../api/service';
 import { HomeSection } from '../components';
 import { Layout } from '../layout';
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
+import {
+  INSTAGRAM_URL,
+  MOBILE_BREAKPOINT,
+  YOUTUBE_URL,
+} from '../utils/constants';
 
 interface Props {
   homePhotography: IHomePhotographyFields[];
   homeRecent: IHomePhotographyFields[];
 }
+
+const SocialMediaLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+`;
+
+export const A = styled.a`
+  text-decoration: none;
+  letter-spacing: 1.6px;
+  color: ${theme.colors.text};
+  margin-top: 32px;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: block;
+  }
+`;
 
 export const getStaticProps: GetStaticProps = async () => {
   const homePhotography = await getHomeSectionPhotos();
@@ -21,6 +52,14 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: React.FC<Props> = ({ homePhotography, homeRecent }) => {
   return (
     <Layout>
+      <SocialMediaLinks>
+        <A target='_blank' href={INSTAGRAM_URL}>
+          Instagram
+        </A>
+        <A target='_blank' href={YOUTUBE_URL}>
+          YouTube
+        </A>
+      </SocialMediaLinks>
       <HomeSection photosSection={homeRecent} sectionName={'Recent work'} />
       <HomeSection
         photosSection={homePhotography}
