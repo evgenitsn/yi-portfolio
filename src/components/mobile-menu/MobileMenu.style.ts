@@ -64,5 +64,5 @@ export const NavigationFooter = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 48px;
+  padding-bottom: 120px;
 `;
