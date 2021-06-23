@@ -3,6 +3,7 @@ import { theme } from '../styles/theme';
 import { Head, Header } from '../components';
 import { MobileMenu } from '../components/';
 import { useState } from 'react';
+import ScrollLock from 'react-scrolllock';
 import {
   Body,
   Main,
@@ -24,6 +25,7 @@ const Layout: React.FC<Props> = ({ children, title }) => {
   return (
     <>
       <Head title={title} />
+      <ScrollLock isActive={isMobileMenuOpen} />
       <ThemeProvider theme={theme}>
         <Body>
           <Main>

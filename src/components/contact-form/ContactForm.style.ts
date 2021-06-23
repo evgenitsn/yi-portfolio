@@ -50,8 +50,9 @@ export const ThanksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 export const ThanksMessage = styled.div`
-  margin-bottom: 32px;
+  margin: 32px 16px;
 `;
