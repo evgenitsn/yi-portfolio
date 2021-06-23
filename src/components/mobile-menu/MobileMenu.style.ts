@@ -24,7 +24,6 @@ export const ExternalA = styled(A)`
 export const Container = styled.div`
   position: absolute;
   background-color: ${theme.colors.black};
-  opacity: 0.9;
   backdrop-filter: blur(10px);
   width: 100%;
   height: 100vh;

@@ -42,7 +42,11 @@ const Layout: React.FC<Props> = ({ children, title }) => {
                 )}
               </MobileMenuButton>
               <Header />
-              {isMobileMenuOpen ? <MobileMenu /> : null}
+              {isMobileMenuOpen ? (
+                <MobileMenu
+                  closeMobileMenu={() => setIsMobileMenuOpen(false)}
+                />
+              ) : null}
 
               <FixedSocialIcons>
                 <a target='_blank' href={INSTAGRAM_URL} rel='noreferrer'>

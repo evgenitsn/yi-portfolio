@@ -12,7 +12,11 @@ import {
 } from './MobileMenu.style';
 import { useRouter } from 'next/router';
 
-const MobileMenu: React.FC = () => {
+interface Props {
+  closeMobileMenu: () => void;
+}
+
+const MobileMenu: React.FC<Props> = ({ closeMobileMenu }) => {
   const router = useRouter();
   return (
     <Container>
@@ -26,7 +30,12 @@ const MobileMenu: React.FC = () => {
           {LINKS.map(({ path, name }) => (
             <Gutter key={path}>
               <Link href={path}>
-                <A active={router.pathname === path}>{name}</A>
+                <A
+                  onClick={() => router.pathname === path && closeMobileMenu()}
+                  active={router.pathname === path}
+                >
+                  {name}
+                </A>
               </Link>
             </Gutter>
           ))}
