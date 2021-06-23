@@ -22,6 +22,11 @@ const SocialMediaLinks = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 16px;
+  display: none;
+
+  @media (max-width: ${MOBILE_BREAKPOINT}) {
+    display: flex;
+  }
 `;
 
 export const A = styled.a`
@@ -29,14 +34,9 @@ export const A = styled.a`
   letter-spacing: 1.6px;
   color: ${theme.colors.text};
   margin-top: 32px;
-  display: none;
 
   &:hover {
     cursor: pointer;
-  }
-
-  @media (max-width: ${MOBILE_BREAKPOINT}) {
-    display: block;
   }
 `;
 
@@ -53,10 +53,10 @@ const Home: React.FC<Props> = ({ homePhotography, homeRecent }) => {
   return (
     <Layout>
       <SocialMediaLinks>
-        <A target='_blank' href={INSTAGRAM_URL}>
+        <A target='_blank' href={INSTAGRAM_URL} rel='noopener noreferrer'>
           Instagram
         </A>
-        <A target='_blank' href={YOUTUBE_URL}>
+        <A target='_blank' href={YOUTUBE_URL} rel='noopener noreferrer'>
           YouTube
         </A>
       </SocialMediaLinks>
