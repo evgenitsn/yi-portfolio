@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta
           name='viewport'
-          content='initial-scale=1.0, maximum-scale=1.0, width=device-width, viewport-fit=cover, user-scalable=no'
+          content='initial-scale=1.0, width=device-width, viewport-fit=cover'
         />
         <meta name='description' content={META_DESCRIPTION} />
         <meta name='referrer' content='origin' />

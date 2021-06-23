@@ -49,10 +49,14 @@ const Layout: React.FC<Props> = ({ children, title }) => {
               ) : null}
 
               <FixedSocialIcons>
-                <a target='_blank' href={INSTAGRAM_URL} rel='noreferrer'>
+                <a
+                  target='_blank'
+                  href={INSTAGRAM_URL}
+                  rel='noopener noreferrer'
+                >
                   <SocialIcon src={'./icons/instagram.svg'} alt='Instagram' />
                 </a>
-                <a target='_blank' href={YOUTUBE_URL} rel='noreferrer'>
+                <a target='_blank' href={YOUTUBE_URL} rel='noopener noreferrer'>
                   <SocialIcon src={'./icons/youtube.svg'} alt='YouTube' />
                 </a>
               </FixedSocialIcons>

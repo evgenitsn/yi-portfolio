@@ -56,7 +56,7 @@ const Image: React.FC<Props> = ({
         quality={DEFAULT_PHOTO_QUALITY}
       />
       <Overlay>
-        <img src={'./icons/eye.svg'} alt='Eye' />
+        <img src={'./icons/eye.svg'} width='34px' height='34px' alt='Eye' />
       </Overlay>
     </ImageContainer>
   );

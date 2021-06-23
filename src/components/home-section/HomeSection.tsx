@@ -22,7 +22,7 @@ const HomeSection: React.FC<Props> = ({
       <SectionTitle>{sectionName}</SectionTitle>
       <PhotosWrapper>
         {photos.map((photo, index) => {
-          const { url } = photo.fields.file;
+          const { url, fileName } = photo.fields.file;
           const width = 280;
           const height = 1.33 * width;
           return (
@@ -36,7 +36,12 @@ const HomeSection: React.FC<Props> = ({
                 >
                   {/* TODO: Maybe don't use <a> as parent here. Possible fix is onclick push  */}
                   <a>
-                    <HomeSectionImage width={width} height={height} url={url} />
+                    <HomeSectionImage
+                      width={width}
+                      height={height}
+                      url={url}
+                      alt={fileName}
+                    />
                     <Overlay>
                       <SectionTitle fontSize={'3rem'}>
                         {HOME_SECTION_NAMES[index]}
@@ -45,7 +50,12 @@ const HomeSection: React.FC<Props> = ({
                   </a>
                 </Link>
               ) : (
-                <HomeSectionImage width={width} height={height} url={url} />
+                <HomeSectionImage
+                  width={width}
+                  height={height}
+                  url={url}
+                  alt={fileName}
+                />
               )}
             </ImageContainer>
           );

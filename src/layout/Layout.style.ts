@@ -76,5 +76,6 @@ export const FixedSocialIcons = styled.div`
 
 export const SocialIcon = styled.img`
   margin-bottom: 36px;
-  transform: scale(1.2);
+  width: 32px;
+  height: 32px;
 `;
