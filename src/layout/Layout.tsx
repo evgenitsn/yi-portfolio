@@ -36,9 +36,19 @@ const Layout: React.FC<Props> = ({ children, title }) => {
                 }
               >
                 {isMobileMenuOpen ? (
-                  <img src={'./icons/menu-cross.svg'} alt='Arrow' />
+                  <img
+                    src={'./icons/menu-cross.svg'}
+                    width='44px'
+                    height='44px'
+                    alt='Close menu'
+                  />
                 ) : (
-                  <img src={'./icons/menu-lines.svg'} alt='Arrow' />
+                  <img
+                    src={'./icons/menu-lines.svg'}
+                    width='44px'
+                    height='44px'
+                    alt='Open menu'
+                  />
                 )}
               </MobileMenuButton>
               <Header />
