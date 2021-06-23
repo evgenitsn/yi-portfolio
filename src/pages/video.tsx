@@ -29,7 +29,6 @@ const Video: React.FC<Props> = ({ videos }) => {
   return (
     <Layout title='Videos'>
       <Wrapper>
-        {/* TODO: Maybe title?? */}
         <VideoList>
           {videos.map(({ url, name }) => {
             const youtubeVideoId = extractYouTubeIdFromUrl(url);

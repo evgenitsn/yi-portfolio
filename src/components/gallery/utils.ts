@@ -1,4 +1,3 @@
-// TODO: test options variants
 export const columnsCount = (containerWidth: number) => {
   let columns = 1;
   if (containerWidth >= 500) columns = 2;

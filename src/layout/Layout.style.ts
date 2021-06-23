@@ -63,7 +63,6 @@ export const FixedSocialIcons = styled.div`
   display: flex;
   flex-direction: column;
 
-  /* TODO: Find a better solution */
   @media (max-width: 1600px) {
     right: 6vw;
   }

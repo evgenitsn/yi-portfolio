@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-// TODO: Check other wrappers in same folder.
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;

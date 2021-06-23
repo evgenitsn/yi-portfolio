@@ -1,6 +1,6 @@
 import { SectionTitle } from '../';
 import { IHomePhotographyFields } from '../../../@types/generated/contentful';
-import { SECTION_NAMES } from '../../utils/constants';
+import { HOME_SECTION_NAMES } from '../../utils/constants';
 import Link from 'next/link';
 import { ImageContainer, Overlay, PhotosWrapper } from './HomeSection.style';
 import { HomeSectionImage } from './';
@@ -17,7 +17,6 @@ const HomeSection: React.FC<Props> = ({
   links = false,
 }) => {
   const { photos } = photosSection[0];
-  // TODO: Make Photography section images clickable links
   return (
     <>
       <SectionTitle>{sectionName}</SectionTitle>
@@ -31,14 +30,16 @@ const HomeSection: React.FC<Props> = ({
               {links ? (
                 <Link
                   scroll={false}
-                  href={`/photography#${SECTION_NAMES[index].toLowerCase()}`}
+                  href={`/photography#${HOME_SECTION_NAMES[
+                    index
+                  ].toLowerCase()}`}
                 >
                   {/* TODO: Maybe don't use <a> as parent here. Possible fix is onclick push  */}
                   <a>
                     <HomeSectionImage width={width} height={height} url={url} />
                     <Overlay>
                       <SectionTitle fontSize={'3rem'}>
-                        {SECTION_NAMES[index]}
+                        {HOME_SECTION_NAMES[index]}
                       </SectionTitle>
                     </Overlay>
                   </a>

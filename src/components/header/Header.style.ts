@@ -19,7 +19,6 @@ export const NavList = styled.ul`
 `;
 
 export const NavListItem = styled.li`
-  /* TODO: should this be vw? */
   margin: 24px 3vw;
 `;
 

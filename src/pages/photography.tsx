@@ -16,6 +16,7 @@ interface Props {
 }
 
 const PAGE_Y_OFFSET = 60;
+const EXTERNAL_PAGE_Y_OFFSET = -200;
 
 export const getStaticProps: GetStaticProps = async () => {
   return { props: { photoSections: await getPhotosSections() } };
@@ -25,11 +26,9 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
   const wrapperRef = useRef<HTMLDivElement | null>();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  useScrollFromLinkToAnchor(wrapperRef, PAGE_Y_OFFSET);
+  useScrollFromLinkToAnchor(wrapperRef, EXTERNAL_PAGE_Y_OFFSET);
 
-  // TODO: Check this
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const openLightbox = useCallback((event, { photo, index }) => {
+  const openLightbox = useCallback((event, { index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
   }, []);
@@ -77,7 +76,6 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
             <Carousel
               // TODO: play with props
               // TODO: apply styling
-              // TODO: Fullscreen disable
               currentIndex={currentImage}
               views={allPhotos.map(x => {
                 return {

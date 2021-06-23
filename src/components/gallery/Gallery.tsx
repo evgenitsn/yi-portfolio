@@ -13,7 +13,6 @@ interface Props {
 const Gallery: React.FC<Props> = ({ photos, onPhotoClick }) => {
   return (
     <ReactGallery
-      // TODO: Customize?
       margin={6}
       direction={'column'}
       columns={columnsCount}
