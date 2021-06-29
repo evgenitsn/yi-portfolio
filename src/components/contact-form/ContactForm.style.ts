@@ -54,5 +54,11 @@ export const ThanksContainer = styled.div`
 `;
 
 export const ThanksMessage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  font-size: 1.3rem;
   margin: 32px 16px;
 `;

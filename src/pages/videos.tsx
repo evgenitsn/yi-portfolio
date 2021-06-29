@@ -25,9 +25,9 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { videos: await getVideos() } };
 };
 
-const Video: React.FC<Props> = ({ videos }) => {
+const Videos: React.FC<Props> = ({ videos }) => {
   return (
-    <Layout title='Videos'>
+    <Layout title='Yordan Ivanov - Videos'>
       <Wrapper>
         <VideoList>
           {videos.map(({ url, name }) => {
@@ -49,4 +49,4 @@ const Video: React.FC<Props> = ({ videos }) => {
   );
 };
 
-export default Video;
+export default Videos;

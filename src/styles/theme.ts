@@ -1,11 +1,10 @@
 export const theme = {
   colors: {
-    // TODO: not full black and not full white
-    black: '#000',
-    white: '#fff',
-    background: '#000',
-    text: '#fff',
-    inputBorder: '#fff',
+    black: '#0F0F10',
+    white: '#FAFAFA',
+    background: '#0F0F10',
+    text: '#FAFAFA',
+    inputBorder: '#FAFAFA',
     inputFieldsBackground: '#161722',
     errorText: '#FF0000',
     errorInputBorder: '#FF0000',

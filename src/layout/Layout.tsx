@@ -21,7 +21,7 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children, title }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // TODO: Head titles?
+
   return (
     <>
       <Head title={title} />

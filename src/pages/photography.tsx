@@ -7,6 +7,7 @@ import { PhotoProps } from 'react-photo-gallery';
 import {
   Wrapper,
   Anchor,
+  SectionButtonsContainer,
 } from '../styles/root-level-pages-styles/photography.style';
 import { useCallback, useRef, useState } from 'react';
 import { useScrollFromLinkToAnchor } from '../hooks/use-scroll-from-link-to-anchor';
@@ -40,17 +41,8 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
 
   const allPhotos = photoSections.map(s => s.photos.map(p => p)).flat();
   return (
-    <Layout title='Photography'>
-      {/* TODO: test this on mobile with more sections */}
-      <div
-        style={{
-          overflow: 'scroll',
-          width: '100%',
-          whiteSpace: 'nowrap',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
+    <Layout title='Yordan Ivanov - Photography'>
+      <SectionButtonsContainer>
         {photoSections.map(e => (
           <Anchor
             key={e.name}
@@ -62,7 +54,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
             </Button>
           </Anchor>
         ))}
-      </div>
+      </SectionButtonsContainer>
       {photoSections.map(({ name, photos }) => (
         <Wrapper ref={wrapperRef} key={name}>
           <SectionTitle id={name.toLowerCase()}>{name}</SectionTitle>
@@ -82,7 +74,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
                   ...x,
                   // TODO: make this ok few resolutions
                   // check portrait or landspace and get the bigger side to up 1500px
-                  source: x.src + '?w=1500&q=90&fm=jpg',
+                  source: x.src + '?w=1400&q=90&fm=jpg',
                 };
               })}
             />

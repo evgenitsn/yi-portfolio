@@ -7,7 +7,8 @@ import {
   EMAIL_VALIDATION_PATTERN,
   INVALID_EMAIL_ERROR_MESSAGE,
   FORM_SUBMIT_ERROR_MESSAGE,
-  THANKS_MESSAGE,
+  THANKS_MESSAGE_1,
+  THANKS_MESSAGE_2,
   FORMSPARK_ACTION_URL,
 } from '../../utils/constants';
 import { Button } from '../';
@@ -70,8 +71,10 @@ const ContactForm: React.FC = () => {
   if (formSubmitted && isSubmitted) {
     return (
       <ThanksContainer>
-        {/* TODO: Revamp this screen */}
-        <ThanksMessage>{THANKS_MESSAGE}</ThanksMessage>
+        <ThanksMessage>
+          <div>{THANKS_MESSAGE_1}</div>
+          <div>{THANKS_MESSAGE_2}</div>
+        </ThanksMessage>
         <Button
           onClick={() => {
             setFormSubmitError(false);

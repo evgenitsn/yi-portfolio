@@ -13,3 +13,11 @@ export const Anchor = styled(AnchorLink)`
   text-decoration: none;
   color: currentColor;
 `;
+
+export const SectionButtonsContainer = styled.div`
+  overflow: auto;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+`;
