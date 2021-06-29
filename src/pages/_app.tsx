@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name='description' content={META_DESCRIPTION} />
         <meta name='referrer' content='origin' />
+        <link rel='icon' type='image/png' href='./favicon.png' sizes='96x96' />
       </Head>
       <GlobalStyles />
       <FontFamilies />
