@@ -21,13 +21,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property='og:url' content={DOMAIN_NAME} />
         <meta property='og:title' content={SITE_TITLE} />
         <meta property='og:description' content={META_DESCRIPTION} />
-        <meta property='og:image' content='./thumbnail.png' />
+        <meta property='og:image' content={`${DOMAIN_NAME}thumbnail.png`} />
 
-        <meta property='twitter:card' content='./thumbnail.png' />
+        <meta property='twitter:card' content={`${DOMAIN_NAME}thumbnail.png`} />
         <meta property='twitter:url' content={DOMAIN_NAME} />
         <meta property='twitter:title' content={SITE_TITLE} />
         <meta property='twitter:description' content={META_DESCRIPTION} />
-        <meta property='twitter:image' content='./thumbnail.png' />
+        <meta
+          property='twitter:image'
+          content={`${DOMAIN_NAME}thumbnail.png`}
+        />
 
         <link rel='icon' type='image/png' href='./favicon.png' sizes='96x96' />
       </Head>
