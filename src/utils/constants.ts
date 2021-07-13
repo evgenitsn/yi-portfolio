@@ -1,10 +1,12 @@
 export const SITE_TITLE = 'Yordan Ivanov Portfolio';
-export const META_DESCRIPTION = 'Yordan Ivanov Portfolio';
+export const META_DESCRIPTION =
+  'List of my creative work as a photographer and videographer';
+export const DOMAIN_NAME = 'https://www.yordaniv.com/';
 
 export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_PUBLIC_FORMSPARK_ACTION_URL}`;
 
 // TODO: Check the network traffic difference
-export const DEFAULT_PHOTO_QUALITY = 85;
+export const DEFAULT_PHOTO_QUALITY = 82;
 export const HOME_SECTION_NAMES = ['Drone', 'People', 'Events', 'Other'];
 
 export const LINKS = [

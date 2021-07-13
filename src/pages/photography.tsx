@@ -74,7 +74,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
                   ...x,
                   // TODO: make this ok few resolutions
                   // check portrait or landspace and get the bigger side to up 1500px
-                  source: x.src + '?w=1400&q=90&fm=jpg',
+                  source: x.src + '?w=1200&q=85&fm=jpg',
                 };
               })}
             />
