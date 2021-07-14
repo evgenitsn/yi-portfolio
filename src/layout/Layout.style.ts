@@ -57,7 +57,7 @@ export const MobileMenuButton = styled.button`
 
 export const FixedSocialIcons = styled.div`
   position: fixed;
-  right: 9vw;
+  right: 8vw;
   top: 30%;
   transform: translateY(-30%);
   display: flex;
