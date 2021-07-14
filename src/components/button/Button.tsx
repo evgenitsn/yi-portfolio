@@ -9,6 +9,7 @@ const StyledButton = styled.button`
   padding: 10px;
   cursor: pointer;
   background-color: ${theme.colors.white};
+  color: ${theme.colors.black};
 
   &:disabled {
     color: ${theme.colors.text};

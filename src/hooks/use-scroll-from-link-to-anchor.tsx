@@ -1,6 +1,7 @@
 import { MutableRefObject, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useComponentSize from '@rehooks/component-size';
+import { isSafari } from 'react-device-detect';
 
 export const useScrollFromLinkToAnchor = (
   ref: MutableRefObject<HTMLDivElement> | null
@@ -15,7 +16,7 @@ export const useScrollFromLinkToAnchor = (
       if (el) {
         const rect = el.getBoundingClientRect();
         const windowWidth = window.innerWidth;
-        const offset = windowWidth > 700 ? 350 : -100;
+        const offset = windowWidth > 700 ? (isSafari ? -100 : 400) : -100;
         window.top.scroll({
           top: rect.top + offset,
           behavior: 'smooth',

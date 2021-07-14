@@ -40,47 +40,49 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
 
   const allPhotos = photoSections.map(s => s.photos.map(p => p)).flat();
   return (
-    <Layout title='Yordan Ivanov - Photography'>
-      <SectionButtonsContainer>
-        {photoSections.map(e => (
-          <Anchor
-            key={e.name}
-            offset={PAGE_Y_OFFSET}
-            href={`#${e.name.toLowerCase()}`}
-          >
-            <Button style={{ padding: '8px 16px', margin: '16px' }}>
-              {e.name}
-            </Button>
-          </Anchor>
+    <div style={{ marginRight: -12 }}>
+      <Layout title='Yordan Ivanov - Photography'>
+        <SectionButtonsContainer>
+          {photoSections.map(e => (
+            <Anchor
+              key={e.name}
+              offset={PAGE_Y_OFFSET}
+              href={`#${e.name.toLowerCase()}`}
+            >
+              <Button style={{ padding: '8px 16px', margin: '16px' }}>
+                {e.name}
+              </Button>
+            </Anchor>
+          ))}
+        </SectionButtonsContainer>
+        {photoSections.map(({ name, photos }) => (
+          <Wrapper ref={wrapperRef} key={name}>
+            <SectionTitle id={name.toLowerCase()}>{name}</SectionTitle>
+            <Gallery photos={photos} onPhotoClick={openLightbox} />
+          </Wrapper>
         ))}
-      </SectionButtonsContainer>
-      {photoSections.map(({ name, photos }) => (
-        <Wrapper ref={wrapperRef} key={name}>
-          <SectionTitle id={name.toLowerCase()}>{name}</SectionTitle>
-          <Gallery photos={photos} onPhotoClick={openLightbox} />
-        </Wrapper>
-      ))}
-      <ScrollToTop />
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              // TODO: play with props
-              // TODO: apply styling
-              currentIndex={currentImage}
-              views={allPhotos.map(x => {
-                return {
-                  ...x,
-                  // TODO: make this ok few resolutions
-                  // check portrait or landspace and get the bigger side to up 1500px
-                  source: x.src + '?w=1200&q=85&fm=jpg',
-                };
-              })}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    </Layout>
+        <ScrollToTop />
+        <ModalGateway>
+          {viewerIsOpen ? (
+            <Modal onClose={closeLightbox}>
+              <Carousel
+                // TODO: play with props
+                // TODO: apply styling
+                currentIndex={currentImage}
+                views={allPhotos.map(x => {
+                  return {
+                    ...x,
+                    // TODO: make this ok few resolutions
+                    // check portrait or landspace and get the bigger side to up 1500px
+                    source: x.src + '?w=1200&q=85&fm=jpg',
+                  };
+                })}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+      </Layout>
+    </div>
   );
 };
 
