@@ -3,8 +3,7 @@ import { useRouter } from 'next/router';
 import useComponentSize from '@rehooks/component-size';
 
 export const useScrollFromLinkToAnchor = (
-  ref: MutableRefObject<HTMLDivElement> | null,
-  offset: number
+  ref: MutableRefObject<HTMLDivElement> | null
 ) => {
   const { height } = useComponentSize(ref);
   const { replace } = useRouter();
@@ -15,10 +14,14 @@ export const useScrollFromLinkToAnchor = (
       const el = window.document.getElementById(id.toLowerCase());
       if (el) {
         const rect = el.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const offset = windowWidth > 700 ? 350 : -100;
         window.top.scroll({
-          top: rect.top - offset,
+          top: rect.top + offset,
           behavior: 'smooth',
         });
+      } else {
+        window.scrollTo(0, 0);
       }
       replace('/photography', null, { shallow: true });
     }

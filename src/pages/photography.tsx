@@ -17,7 +17,6 @@ interface Props {
 }
 
 const PAGE_Y_OFFSET = 60;
-const EXTERNAL_PAGE_Y_OFFSET = -200;
 
 export const getStaticProps: GetStaticProps = async () => {
   return { props: { photoSections: await getPhotosSections() } };
@@ -27,7 +26,7 @@ const Photography: React.FC<Props> = ({ photoSections }) => {
   const wrapperRef = useRef<HTMLDivElement | null>();
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  useScrollFromLinkToAnchor(wrapperRef, EXTERNAL_PAGE_Y_OFFSET);
+  useScrollFromLinkToAnchor(wrapperRef);
 
   const openLightbox = useCallback((event, { index }) => {
     setCurrentImage(index);

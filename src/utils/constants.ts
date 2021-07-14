@@ -8,7 +8,7 @@ export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_
 
 // TODO: Check the network traffic difference
 export const DEFAULT_PHOTO_QUALITY = 82;
-export const HOME_SECTION_NAMES = ['Drone', 'People', 'Events', 'Other'];
+export const HOME_SECTION_NAMES = ['Drone', 'People', 'Events', 'View all'];
 
 export const LINKS = [
   { path: '/', name: 'Home' },
