@@ -1,7 +1,8 @@
 export const SITE_TITLE = 'Yordan Ivanov Portfolio';
 export const META_DESCRIPTION =
   'List of my creative work as a photographer and videographer';
-export const DOMAIN_NAME = 'https://www.yordaniv.com/';
+export const PROD_URL = 'https://www.yordaniv.com/';
+export const DEV_URL = 'http://localhost:3000';
 
 export const FORMSPARK_ACTION_URL = `https://submit-form.com/${process.env.NEXT_PUBLIC_FORMSPARK_ACTION_URL}`;
 

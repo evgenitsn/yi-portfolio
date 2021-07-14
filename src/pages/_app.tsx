@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { DOMAIN_NAME, META_DESCRIPTION, SITE_TITLE } from '../utils/constants';
+import { PROD_URL, META_DESCRIPTION, SITE_TITLE } from '../utils/constants';
 import { GlobalStyles } from '../styles/global';
 import FontFamilies from '../styles/font-families';
 import { useRouter } from 'next/router';
@@ -38,19 +38,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name='referrer' content='origin' />
 
         <meta property='og:type' content='website' />
-        <meta property='og:url' content={DOMAIN_NAME} />
+        <meta property='og:url' content={PROD_URL} />
         <meta property='og:title' content={SITE_TITLE} />
         <meta property='og:description' content={META_DESCRIPTION} />
-        <meta property='og:image' content={`${DOMAIN_NAME}thumbnail.png`} />
+        <meta property='og:image' content={`${PROD_URL}thumbnail.png`} />
 
-        <meta property='twitter:card' content={`${DOMAIN_NAME}thumbnail.png`} />
-        <meta property='twitter:url' content={DOMAIN_NAME} />
+        <meta property='twitter:card' content={`${PROD_URL}thumbnail.png`} />
+        <meta property='twitter:url' content={PROD_URL} />
         <meta property='twitter:title' content={SITE_TITLE} />
         <meta property='twitter:description' content={META_DESCRIPTION} />
-        <meta
-          property='twitter:image'
-          content={`${DOMAIN_NAME}thumbnail.png`}
-        />
+        <meta property='twitter:image' content={`${PROD_URL}thumbnail.png`} />
 
         <link rel='icon' type='image/png' href='./favicon.png' sizes='96x96' />
 
